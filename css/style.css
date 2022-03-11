@@ -3,6 +3,7 @@
 --------------------------------------------------------
 --| General
 --| Navbar
+--| [SECTION] Loading 
 --| Search Form
 --| [SECTION] Above the Fold 
 --| [SECTION] Features
@@ -98,6 +99,34 @@ section {
 
 /* ************************************************************
 ***************************************************************
+--- [SECTION] Loading ---
+***************************************************************
+************************************************************ */
+.loadingHtml img{
+  height: 154px;
+  width: 154px;
+}
+
+.loadingHtml h5{
+  font-size: 24px;
+}
+
+.loadingHtml{
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .loadingHtml img{
+    height: 124px;
+    width: 124px;
+  }
+  .loadingHtml h5{
+    font-size: 18px;
+  }
+}
+
+/* ************************************************************
+***************************************************************
 --- Search Form ---
 ***************************************************************
 ************************************************************ */
@@ -158,6 +187,19 @@ section {
   color: #FFF;
   margin: 0 0 0 15px;
   line-height: normal;
+}
+
+.btn-form-submit:not(:disabled):not(.disabled).active, 
+.btn-form-submit:not(:disabled):not(.disabled):active {
+  background-image: none;
+  background-color: #f6bc25!important;
+}
+.btn-form-submit.focus, .btn-form-submit:focus {
+  box-shadow: 0 3px 0 0 #a6953b, inset 0 1px 0 0 #ffffff!important;
+}
+.btn-form-submit:hover{
+  background-image: none;
+  background-color: #f2da56!important;
 }
 
 @media (max-width: 767px) {
@@ -330,6 +372,9 @@ section {
 }
 
 @media (max-width: 767px) {
+  .input-group.error .error-msg {
+    position: static;
+  }
   .result {
     min-height: 306px;
   }
