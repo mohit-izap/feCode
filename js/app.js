@@ -14,9 +14,10 @@ $(document).ready(function () {
     }
 
     if (x === true) {
-      $('.loadingHtml').show();
-      $('.above-the-fold').hide();
+      $('.loading').show();
       $('.features').hide();
+      $('.result').hide();
+      $('.above-the-fold').hide();
       document.querySelector('input[type="text"]').parentNode.classList.remove("error");
       const proxyurl = "";
       const url =
@@ -25,9 +26,12 @@ $(document).ready(function () {
         .then((response) => response.text())
         .then(function (contents) {
           localStorage.setItem("userObject", contents);
-            $('.loadingHtml').hide();
-            $('.footer').hide();
-          window.location.href = "result.html";
+          $('.loading').hide();
+          $('.result').css('display', 'flex');
+          $('.above-the-fold').show();
+          $('.above-the-fold h1').text(`Can't Find The Right Person?`);
+          $('.above-the-fold h2').replaceWith(`<strong>Try Again</strong> - Make a new search`);
+          $('.above-the-fold').addClass('search-again');
         })
         .catch((e) => console.log(e));
     } else if (x !== true) {
@@ -57,9 +61,10 @@ $(document).ready(function () {
 
 
       if (x === true) {
-        $('.loadingHtml').show();
-        $('.above-the-fold').hide();
+        $('.loading').show();
         $('.features').hide();
+        $('.result').hide();
+        $('.above-the-fold').hide();
         const proxyurl = "";
         const url =
           'https://ltv-data-api.herokuapp.com/api/v1/records.json?email=' + email;
@@ -67,9 +72,12 @@ $(document).ready(function () {
           .then((response) => response.text())
           .then(function (contents) {
             localStorage.setItem("userObject", contents);
-            $('.loadingHtml').hide();
-            $('.footer').hide();
-            window.location.href = "result.html";
+            $('.loading').hide();
+            $('.result').css('display', 'flex');
+            $('.above-the-fold').show();
+            $('.above-the-fold h1').text(`Can't Find The Right Person?`);
+            $('.above-the-fold h2').replaceWith(`<strong>Try Again</strong> - Make a new search`);
+            $('.above-the-fold').addClass('search-again');
           })
           .catch((e) => console.log(e));
       } else if (x !== true) {

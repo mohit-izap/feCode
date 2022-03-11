@@ -102,25 +102,25 @@ section {
 --- [SECTION] Loading ---
 ***************************************************************
 ************************************************************ */
-.loadingHtml img{
+.loading img{
   height: 154px;
   width: 154px;
 }
 
-.loadingHtml h5{
+.loading h5{
   font-size: 24px;
 }
 
-.loadingHtml{
+.loading{
   display: none;
 }
 
 @media (max-width: 767px) {
-  .loadingHtml img{
+  .loading img{
     height: 124px;
     width: 124px;
   }
-  .loadingHtml h5{
+  .loading h5{
     font-size: 18px;
   }
 }
@@ -357,9 +357,10 @@ form .badge.active::after {
 ************************************************************ */
 
 .result {
+  display: none;
   background: #F8F8F8;
   min-height: 455px;
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   justify-content: center;
 }
