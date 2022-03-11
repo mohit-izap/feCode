@@ -201,8 +201,44 @@ section {
   background-image: none;
   background-color: #f2da56!important;
 }
-
+.search-badge{
+  font-size: 16px;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+form .badge{
+  cursor: pointer;
+  border: 3px solid #F6BC25;
+  border-radius: 6px;
+  color: #F6BC25;
+  font-size: 16px;
+  letter-spacing: 0;
+  font-weight: 700;
+  padding: 6px 9px
+}
+form .badge.active{
+  background: #F6BC25;
+  color: #004A80;
+  border-radius: 6px 6px 6px 0 0 0 6px;
+  position: relative;
+}
+form .badge.active::after {
+  content: '';
+  width: 0px;
+  height: 0px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #f6bc25;
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  right: 50%;
+  transform: translate(-50%, -50%);
+}
 @media (max-width: 767px) {
+  form .badge{
+    font-size: 14px;
+  }
   .input-group {
     flex-direction: column;
   }

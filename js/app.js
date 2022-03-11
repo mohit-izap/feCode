@@ -78,4 +78,16 @@ $(document).ready(function () {
     }
   });
 
+  $("form .badge").on("click", function (e) {
+    $('form .badge').removeClass('active');
+    $(this).addClass('active');
+    if(e.target.innerHTML==='PHONE NUMBER'){
+      $('.input-group input').attr('placeholder', 'Enter a Phone Number')
+      $('.input-group .error-msg').text('Please enter a valid Phone Number');
+    }else{
+      $('.input-group input').attr('placeholder', 'Enter an Email Address')
+      $('.input-group .error-msg').text('Please enter a valid email address');
+    }
+  })
+
 });
